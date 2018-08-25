@@ -12,4 +12,4 @@ rem     --> screen.tmx.bin
 
 tniasm gfx.asm gfx.bin
 
-copy gfx.bin ..\gfx.bin
+copy gfx.bin ..\dsk\gfx.bin
