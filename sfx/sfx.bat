@@ -2,4 +2,4 @@
 
 tniasm sfx.asm sfx.bin
 
-copy sfx.bin ..\sfx.bin
+copy sfx.bin ..\dsk\sfx.bin
