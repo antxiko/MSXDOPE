@@ -1,0 +1,59 @@
+SjasmPG Z80 Assembler v0.1.0.1 - PipaGerardo      [2018.08.30 - 11:35:39]
+Based on Sjasm v42c by Sjoerd Mastijn - www.xl2s.tk
+
+
+gfx.asm
+Errors: 8
+
+Line 	Pag:Direcction	Value		Complet Line
+-----	--------------	-----		----------------------------------------------------
+       1   00:0000                      
+       2   00:0000                      ; BLOAD header
+       3   00:0000  FE                  	db	$fe ; ID byte
+       4   00:0001  00 00               	dw	$0000 ; start_address
+       5   00:0003  FF 37               	dw	end_address -1
+       6   00:0005  00 00               	dw	$0000 ; (no execution_address)
+       7   00:0007                      
+       8   00:0007                      ; Pattern table (CHRTBL)
+       9   00:0007                      	org	$0000
+gfx.asm(10) : Error opening file: charset.pcx.chr
+      10   00:0000  (0000)              	incbin	"charset.pcx.chr" ; bank 0
+gfx.asm(11) : Error opening file: charset.pcx.chr
+      11   00:0000  (0000)              	incbin	"charset.pcx.chr" ; bank 1
+gfx.asm(12) : Error opening file: charset.pcx.chr
+      12   00:0000  (0000)              	incbin	"charset.pcx.chr" ; bank 2
+      13   00:0000                      	
+      14   00:0000                      ; Name table (NAMTBL)
+      15   00:0000                      	org	$1800
+gfx.asm(16) : Error opening file: screen.tmx.bin
+      16   00:1800  (0000)              	incbin	"screen.tmx.bin"
+      17   00:1800                      	
+      18   00:1800                      ; Sprite attributes table (SPRATR)
+      19   00:1800                      	org	$1b00
+      20   00:1B00  D0 (1280)           	ds	$2000 - $, $d0 ; padding ($d0 = Sprite attribute table end marker)
+      21   00:2000                      	
+      22   00:2000                      ; Color table (CLRTBL)
+      23   00:2000                      	org	$2000
+gfx.asm(24) : Error opening file: charset.pcx.clr
+      24   00:2000  (0000)              	incbin	"charset.pcx.clr" ; bank 0
+gfx.asm(25) : Error opening file: charset.pcx.clr
+      25   00:2000  (0000)              	incbin	"charset.pcx.clr" ; bank 1
+gfx.asm(26) : Error opening file: charset.pcx.clr
+      26   00:2000  (0000)              	incbin	"charset.pcx.clr" ; bank 2
+      27   00:2000                      	
+      28   00:2000                      ; Sprite pattern table (SPRTBL)
+      29   00:2000                      	org	$3800
+gfx.asm(30) : Error opening file: sprites.pcx.spr
+      30   00:3800  (0000)              	incbin	"sprites.pcx.spr"
+      31   00:3800                      	
+      32   00:3800                      end_address:
+
+
+ Output: gfx.bin
+-------------------------------------------------
+
+ Page: 00
+  Org: 00000000  Size: *  Used: 00000507
+
+   Address   Length Align   Label
+   00000000    1287         end_address
