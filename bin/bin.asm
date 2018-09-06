@@ -47,10 +47,15 @@
 
 	org	$af00
 start_address:
+	; Important note:
+	; If "Jump to initialization routine" is checked in MSX-BASIC ROM Creator,
+	; the ROM will jump to the binary file start
+	; (instead of execution address like BLOAD,R does)
+	; so the execution address must match start_address to make a .BIN
+	; compatible with MSX-BASIC ROM Creator
 	
 ; -----------------------------------------------------------------------------
 execution_address:
-
 ; VDP: color 15,1,1
 	ld	a, 15
 	ld	[FORCLR], a
